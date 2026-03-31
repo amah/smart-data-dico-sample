@@ -1,0 +1,24 @@
+uuid: persp-member-billing-001
+name: Member Billing
+description: Billing process from premium calculation to payment collection
+rootEntities:
+  - "0662b921-f306-4268-8f90-ca03f500a971"
+  - "36ab6300-e581-41df-9668-6b1d2022dacb"
+maxDepth: 4
+nodes:
+  - path: "Invoice/member/addresses"
+    metadata:
+      - name: usage
+        value: "billing-address for invoice mailing"
+  - path: "Member/enrollments/plan/premiums"
+    metadata:
+      - name: business-rule
+        value: "Premium amount drives invoice total"
+        severity: warning
+  - path: "Member/dependents"
+    exclude: true
+metadata:
+  - name: owner
+    value: billing-team
+createdAt: "2026-03-31T10:00:00Z"
+updatedAt: "2026-03-31T10:00:00Z"

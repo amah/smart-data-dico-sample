@@ -1,0 +1,4 @@
+id: claims-processing
+name: claims-processing
+description: Claims submission, adjudication, payment, and EOB generation
+type: microservice

@@ -1,0 +1,4 @@
+id: billing
+name: billing
+description: Member invoicing and payment collection
+type: microservice

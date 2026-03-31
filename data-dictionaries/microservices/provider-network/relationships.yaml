@@ -1,0 +1,34 @@
+- uuid: rel-provider-facility
+  description: Provider practices at Facility
+  source:
+    entity: "78cf8b8a-6ec3-48a5-b08f-33bf115b166e"
+    cardinality: many
+    name: facilities
+  target:
+    entity: "7d31596f-58e6-40f9-bd0d-221e6a5ae189"
+    cardinality: many
+    name: providers
+- uuid: rel-provider-contract
+  description: Provider has Contract
+  source:
+    entity: "78cf8b8a-6ec3-48a5-b08f-33bf115b166e"
+    cardinality: one
+    name: contract
+  target:
+    entity: "dbccb376-9997-4239-93f2-f7e9426b06f0"
+    cardinality: one
+    name: provider
+- uuid: lineage-provider-claim
+  type: lineage
+  description: Provider fee schedule determines allowed amounts
+  source:
+    entity: "78cf8b8a-6ec3-48a5-b08f-33bf115b166e"
+    cardinality: one
+    name: feeSchedule
+  target:
+    entity: "b8947679-12ce-4e86-8c72-4d74b91ffc6c"
+    cardinality: many
+    name: pricedClaims
+  metadata:
+    - name: transformation-type
+      value: pricing

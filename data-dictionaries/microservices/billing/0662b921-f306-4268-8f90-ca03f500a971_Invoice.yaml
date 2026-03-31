@@ -1,0 +1,69 @@
+uuid: 0662b921-f306-4268-8f90-ca03f500a971
+name: Invoice
+description: A billing invoice sent to a member
+stereotype: aggregate-root
+status: approved
+attributes:
+- uuid: 6d7171df-af57-46fa-bb66-2d8f526e425b
+  name: invoiceId
+  description: Unique invoice identifier
+  type: string
+  required: true
+  primaryKey: true
+- uuid: 330eafe6-d626-4976-b3a4-34d4c495dad9
+  name: invoiceNumber
+  description: Human-readable invoice number
+  type: string
+  required: true
+- uuid: 6a5f6f31-3a55-49a3-a410-6ad888728cf5
+  name: invoiceDate
+  description: Invoice issue date
+  type: date
+  required: true
+- uuid: b48fce69-177a-4fca-81f0-5359b3ed4e5a
+  name: dueDate
+  description: Payment due date
+  type: date
+  required: true
+- uuid: 4c8fa94e-a6a1-40e9-a7ed-2c4ab1e6cfb6
+  name: totalAmount
+  description: Total invoice amount
+  type: number
+  required: true
+  constraints:
+    minimum: 0
+    precision: 10
+    scale: 2
+- uuid: 6af2cd22-20fb-401a-9608-50d64daff7b5
+  name: paidAmount
+  description: Amount paid so far
+  type: number
+  required: true
+  constraints:
+    minimum: 0
+- uuid: 4c94b8ba-7220-4f01-9dff-8e235e263e0e
+  name: status
+  description: Invoice status
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - DRAFT
+    - SENT
+    - PAID
+    - PARTIAL
+    - OVERDUE
+    - CANCELLED
+- uuid: 8174e17d-e36a-41a3-8dbe-860fd5761b30
+  name: invoiceType
+  description: Type of invoice
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - PREMIUM
+    - COPAY
+    - DEDUCTIBLE
+    - COINSURANCE
+createdAt: '2026-03-31T11:24:44.706579Z'
+updatedAt: '2026-03-31T11:24:44.706579Z'

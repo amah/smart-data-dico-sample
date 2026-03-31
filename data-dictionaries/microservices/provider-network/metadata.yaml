@@ -1,0 +1,4 @@
+id: provider-network
+name: provider-network
+description: Healthcare providers, facilities, and contract management
+type: microservice

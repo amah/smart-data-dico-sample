@@ -1,0 +1,93 @@
+uuid: 36ab6300-e581-41df-9668-6b1d2022dacb
+name: Member
+description: A health insurance plan member (primary subscriber)
+stereotype: aggregate-root
+status: approved
+attributes:
+- uuid: bcd0e5dd-d86c-412d-a049-692c1e437351
+  name: memberId
+  description: Unique member identifier
+  type: string
+  required: true
+  primaryKey: true
+- uuid: 7523276f-94bc-44f3-88ab-afe150092f04
+  name: ssn
+  description: Social Security Number
+  type: string
+  required: true
+  metadata:
+  - name: pii-category
+    value: direct
+  constraints:
+    pattern: ^\d{3}-\d{2}-\d{4}$
+- uuid: 012c99ed-f6ca-4298-a9a7-659665ada2bd
+  name: firstName
+  description: Legal first name
+  type: string
+  required: true
+  metadata:
+  - name: pii-category
+    value: direct
+- uuid: e0758708-06dd-4118-a354-9fcb06095127
+  name: lastName
+  description: Legal last name
+  type: string
+  required: true
+  metadata:
+  - name: pii-category
+    value: direct
+- uuid: d8e6bf06-d5d2-4e19-9b4c-a9127d9ce21f
+  name: dateOfBirth
+  description: Date of birth
+  type: date
+  required: true
+  metadata:
+  - name: pii-category
+    value: indirect
+- uuid: 0829730d-39f5-4106-9046-83a034b29c23
+  name: gender
+  description: Gender identity
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - MALE
+    - FEMALE
+    - NON_BINARY
+    - PREFER_NOT_TO_SAY
+- uuid: 1e0d6ca0-7631-4bad-89d5-23240d67aa67
+  name: email
+  description: Email address
+  type: string
+  required: true
+  metadata:
+  - name: pii-category
+    value: direct
+  constraints:
+    format: email
+- uuid: d90e9eed-23d4-4533-9324-6c72ba23996a
+  name: phone
+  description: Phone number
+  type: string
+  required: true
+  metadata:
+  - name: pii-category
+    value: direct
+- uuid: f2a58338-9c46-4454-a771-97862f2b04bc
+  name: preferredLanguage
+  description: Preferred communication language
+  type: string
+  required: false
+- uuid: 0fee8a68-0230-40bd-aab6-477c2f4b19d0
+  name: status
+  description: Member status
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - ACTIVE
+    - INACTIVE
+    - SUSPENDED
+    - TERMINATED
+createdAt: '2026-03-31T11:24:44.706579Z'
+updatedAt: '2026-03-31T11:24:44.706579Z'

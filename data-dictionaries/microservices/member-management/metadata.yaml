@@ -1,0 +1,4 @@
+id: member-management
+name: member-management
+description: Member enrollment, demographics, and dependent management
+type: microservice

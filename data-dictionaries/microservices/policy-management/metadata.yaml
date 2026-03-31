@@ -1,0 +1,4 @@
+id: policy-management
+name: policy-management
+description: Insurance plans, coverage details, premiums, and benefits
+type: microservice

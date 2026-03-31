@@ -1,0 +1,50 @@
+uuid: 03ee733a-f092-4729-bf35-596c17eabe14
+name: Premium
+description: Premium amount for a plan
+stereotype: value-object
+status: approved
+attributes:
+- uuid: 2b4e7c65-a20e-4df2-8dd6-f4deb741a6cb
+  name: premiumId
+  description: Unique premium identifier
+  type: string
+  required: true
+  primaryKey: true
+- uuid: afeb0a53-6008-42a6-a04c-bea522d9a374
+  name: amount
+  description: Premium amount
+  type: number
+  required: true
+  constraints:
+    minimum: 0
+    precision: 10
+    scale: 2
+- uuid: eca4ba69-2fa7-4526-ae83-778e4e76419a
+  name: frequency
+  description: Payment frequency
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - MONTHLY
+    - QUARTERLY
+    - SEMI_ANNUAL
+    - ANNUAL
+- uuid: 7d19123b-b7c4-400f-bde0-e4524168ac5d
+  name: effectiveDate
+  description: Premium effective date
+  type: date
+  required: true
+- uuid: ec4c529b-98e4-433d-a147-cef2a264a09e
+  name: tierType
+  description: Coverage tier
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - INDIVIDUAL
+    - INDIVIDUAL_PLUS_SPOUSE
+    - INDIVIDUAL_PLUS_CHILDREN
+    - FAMILY
+createdAt: '2026-03-31T11:24:44.706579Z'
+updatedAt: '2026-03-31T11:24:44.706579Z'

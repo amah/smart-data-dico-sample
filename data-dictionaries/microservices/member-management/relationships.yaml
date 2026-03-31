@@ -1,0 +1,40 @@
+- uuid: rel-member-dependent
+  description: Member has Dependents
+  source:
+    entity: "36ab6300-e581-41df-9668-6b1d2022dacb"
+    cardinality: one
+    name: dependents
+  target:
+    entity: "660b5ca2-9316-402e-a7e5-de7844a423ad"
+    cardinality: many
+    name: member
+- uuid: rel-member-address
+  description: Member has Addresses
+  source:
+    entity: "36ab6300-e581-41df-9668-6b1d2022dacb"
+    cardinality: one
+    name: addresses
+  target:
+    entity: "7875b2d0-1748-4763-b486-215334bf513e"
+    cardinality: many
+    name: member
+- uuid: rel-member-enrollment
+  description: Member has Enrollments
+  source:
+    entity: "36ab6300-e581-41df-9668-6b1d2022dacb"
+    cardinality: one
+    name: enrollments
+  target:
+    entity: "6815a7f9-1730-4e90-926e-2cae2e4b4648"
+    cardinality: many
+    name: member
+- uuid: rel-enrollment-plan
+  description: Enrollment references Plan
+  source:
+    entity: "6815a7f9-1730-4e90-926e-2cae2e4b4648"
+    cardinality: many
+    name: plan
+  target:
+    entity: "3d8f89a9-3c56-422b-b576-03fc0f0c23c2"
+    cardinality: one
+    name: enrollments

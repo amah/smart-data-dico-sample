@@ -1,0 +1,59 @@
+uuid: 78cf8b8a-6ec3-48a5-b08f-33bf115b166e
+name: Provider
+description: A healthcare provider (physician, specialist)
+stereotype: aggregate-root
+status: approved
+attributes:
+- uuid: 53b233d2-1505-450c-b2a4-1a9b996c9aa2
+  name: npi
+  description: National Provider Identifier
+  type: string
+  required: true
+  primaryKey: true
+  constraints:
+    pattern: ^\d{10}$
+- uuid: 0ec6ca30-75aa-4d4e-8bd7-91f35a83a0d0
+  name: firstName
+  description: Provider first name
+  type: string
+  required: true
+- uuid: d27f897d-5caf-42b8-b3ad-8a31174714f0
+  name: lastName
+  description: Provider last name
+  type: string
+  required: true
+- uuid: a708ebf2-8c2d-4b05-93a4-3f8e1e212a22
+  name: specialty
+  description: Medical specialty
+  type: string
+  required: true
+- uuid: db0e274e-a259-4e0c-b405-df1af770d030
+  name: licenseNumber
+  description: State medical license number
+  type: string
+  required: true
+- uuid: d267a0e7-1df8-4df9-86ef-4f1f00e0ce99
+  name: taxId
+  description: Tax identification number
+  type: string
+  required: true
+  metadata:
+  - name: pii-category
+    value: direct
+- uuid: ea21f24d-353b-4956-8db0-2438c1f32b0c
+  name: networkStatus
+  description: Network participation status
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - IN_NETWORK
+    - OUT_OF_NETWORK
+    - PREFERRED
+- uuid: 8b5a2867-35ba-4d8a-bb1e-16a622109e10
+  name: acceptingNewPatients
+  description: Whether accepting new patients
+  type: boolean
+  required: true
+createdAt: '2026-03-31T11:24:44.706579Z'
+updatedAt: '2026-03-31T11:24:44.706579Z'

@@ -1,0 +1,63 @@
+uuid: 3d8f89a9-3c56-422b-b576-03fc0f0c23c2
+name: Plan
+description: An insurance plan with specific coverage details
+stereotype: aggregate-root
+status: approved
+attributes:
+- uuid: cb983443-91e2-4178-9f85-70903c329d8b
+  name: planId
+  description: Unique plan identifier
+  type: string
+  required: true
+  primaryKey: true
+- uuid: a6cd028f-16de-411f-aee0-f7d61a93345a
+  name: name
+  description: Plan display name
+  type: string
+  required: true
+- uuid: b5791d13-7868-46f0-b243-a84837a8c1ea
+  name: type
+  description: Plan network type
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - HMO
+    - PPO
+    - EPO
+    - POS
+    - HDHP
+- uuid: 84df069c-e2a1-432a-ab79-7d4d314ef03d
+  name: metalLevel
+  description: ACA metal level
+  type: enum
+  required: true
+  constraints:
+    enumValues:
+    - BRONZE
+    - SILVER
+    - GOLD
+    - PLATINUM
+    - CATASTROPHIC
+- uuid: aaba9b0d-5efc-4505-b312-dc797a2a5d25
+  name: description
+  description: Plan description
+  type: string
+  required: false
+- uuid: a5c21286-07c9-4b03-a0cc-d8d428f6538a
+  name: effectiveDate
+  description: Plan effective date
+  type: date
+  required: true
+- uuid: 4fbf0cab-2371-46c8-9045-e7bf14344261
+  name: terminationDate
+  description: Plan termination date
+  type: date
+  required: false
+- uuid: 309ad64f-4b18-44f9-8f34-c3e677975225
+  name: isActive
+  description: Whether the plan is currently offered
+  type: boolean
+  required: true
+createdAt: '2026-03-31T11:24:44.706579Z'
+updatedAt: '2026-03-31T11:24:44.706579Z'
