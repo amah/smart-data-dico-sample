@@ -9,9 +9,11 @@ A sample data dictionary for a health care insurance management platform, create
 git clone https://github.com/amah/smart-data-dico-sample.git
 cd smart-data-dico-sample
 
-# Run smart-data-dico pointing to this data
-npx smart-data-dico --data-dir ./data-dictionaries
+# Run smart-data-dico (installs automatically via npx)
+npx @hamak/smart-data-dico --data-dir ./data-dictionaries
 ```
+
+Then open http://localhost:3001 in your browser.
 
 ## Domain Overview
 
