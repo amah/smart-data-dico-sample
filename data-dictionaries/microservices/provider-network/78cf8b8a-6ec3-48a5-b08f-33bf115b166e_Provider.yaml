@@ -10,7 +10,7 @@ attributes:
   type: string
   required: true
   primaryKey: true
-  constraints:
+  validation:
     pattern: ^\d{10}$
 - uuid: 0ec6ca30-75aa-4d4e-8bd7-91f35a83a0d0
   name: firstName
@@ -45,7 +45,7 @@ attributes:
   description: Network participation status
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - IN_NETWORK
     - OUT_OF_NETWORK

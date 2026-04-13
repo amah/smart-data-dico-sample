@@ -30,7 +30,7 @@ attributes:
   description: Enrollment status
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - PENDING
     - ACTIVE
@@ -41,7 +41,7 @@ attributes:
   description: Type of enrollment
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - NEW
     - RENEWAL

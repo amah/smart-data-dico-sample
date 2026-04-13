@@ -20,7 +20,7 @@ attributes:
   description: Payment method
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - CHECK
     - EFT
@@ -30,7 +30,7 @@ attributes:
   description: Payment amount
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
     precision: 10
     scale: 2
@@ -44,7 +44,7 @@ attributes:
   description: Who receives payment
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - PROVIDER
     - MEMBER

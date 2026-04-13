@@ -20,7 +20,7 @@ attributes:
   description: Facility type
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - HOSPITAL
     - CLINIC

@@ -20,7 +20,7 @@ attributes:
   description: Adjudication decision
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - APPROVED
     - DENIED
@@ -36,7 +36,7 @@ attributes:
   description: Adjusted payment amount
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
 - uuid: 8b4e1e7c-b1ed-4f3c-9b59-b1a28c7a8971
   name: reviewerNotes

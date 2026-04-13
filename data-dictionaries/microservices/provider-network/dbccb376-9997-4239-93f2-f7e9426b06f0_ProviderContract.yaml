@@ -25,7 +25,7 @@ attributes:
   description: Fee schedule type
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - MEDICARE
     - CUSTOM
@@ -35,14 +35,14 @@ attributes:
   description: Reimbursement rate/percentage
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
 - uuid: e5354795-f8fa-4868-bc48-89cbf9d6b155
   name: status
   description: Contract status
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - ACTIVE
     - PENDING

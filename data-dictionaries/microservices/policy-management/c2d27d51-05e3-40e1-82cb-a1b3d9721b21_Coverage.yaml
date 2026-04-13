@@ -15,7 +15,7 @@ attributes:
   description: Type of coverage
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - MEDICAL
     - DENTAL
@@ -27,7 +27,7 @@ attributes:
   description: Annual in-network deductible amount
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
     precision: 10
     scale: 2
@@ -36,21 +36,21 @@ attributes:
   description: Annual out-of-network deductible
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
 - uuid: 8eb775c3-4fc0-4909-bef6-03a4ef8a70b1
   name: copay
   description: Standard copay amount
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
 - uuid: f18183ce-1bcc-406e-abc2-13edc4d49250
   name: coinsurance
   description: Coinsurance percentage
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
     maximum: 100
 - uuid: 32f9f881-d4e8-4f0b-bd68-9d84a7f3c6ae
@@ -58,7 +58,7 @@ attributes:
   description: Maximum out-of-pocket per year
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
 createdAt: '2026-03-31T11:24:44.706579Z'
 updatedAt: '2026-03-31T11:24:44.706579Z'

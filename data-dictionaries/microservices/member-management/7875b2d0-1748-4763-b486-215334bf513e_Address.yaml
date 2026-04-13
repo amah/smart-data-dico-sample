@@ -15,7 +15,7 @@ attributes:
   description: Address type
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - HOME
     - MAILING
@@ -43,7 +43,7 @@ attributes:
   description: State code
   type: string
   required: true
-  constraints:
+  validation:
     minLength: 2
     maxLength: 2
 - uuid: bfa2e140-66b4-494b-a3c7-ebc92bccbee9
@@ -51,7 +51,7 @@ attributes:
   description: ZIP code
   type: string
   required: true
-  constraints:
+  validation:
     pattern: ^\d{5}(-\d{4})?$
 - uuid: 93a937cd-f303-468c-987f-85bf6c43d9b8
   name: country

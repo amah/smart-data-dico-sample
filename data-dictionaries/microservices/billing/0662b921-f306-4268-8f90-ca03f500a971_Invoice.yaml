@@ -30,7 +30,7 @@ attributes:
   description: Total invoice amount
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
     precision: 10
     scale: 2
@@ -39,14 +39,14 @@ attributes:
   description: Amount paid so far
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
 - uuid: 4c94b8ba-7220-4f01-9dff-8e235e263e0e
   name: status
   description: Invoice status
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - DRAFT
     - SENT
@@ -59,7 +59,7 @@ attributes:
   description: Type of invoice
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - PREMIUM
     - COPAY

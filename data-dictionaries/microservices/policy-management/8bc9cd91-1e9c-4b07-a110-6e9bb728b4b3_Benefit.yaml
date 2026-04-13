@@ -20,7 +20,7 @@ attributes:
   description: Benefit category
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - PREVENTIVE
     - EMERGENCY

@@ -29,7 +29,7 @@ attributes:
   description: Amount charged
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
     precision: 10
     scale: 2
@@ -38,14 +38,14 @@ attributes:
   description: Allowed amount per fee schedule
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
 - uuid: 3b2d1789-d5c0-477c-954a-3c5fc3286df2
   name: paidAmount
   description: Amount paid
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
 - uuid: c20e6e26-edcf-45db-b9da-e34e9d498626
   name: units

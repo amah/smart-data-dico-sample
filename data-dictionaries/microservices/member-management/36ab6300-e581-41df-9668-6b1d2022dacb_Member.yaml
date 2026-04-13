@@ -18,7 +18,7 @@ attributes:
   metadata:
   - name: pii-category
     value: direct
-  constraints:
+  validation:
     pattern: ^\d{3}-\d{2}-\d{4}$
 - uuid: 012c99ed-f6ca-4298-a9a7-659665ada2bd
   name: firstName
@@ -49,7 +49,7 @@ attributes:
   description: Gender identity
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - MALE
     - FEMALE
@@ -63,7 +63,7 @@ attributes:
   metadata:
   - name: pii-category
     value: direct
-  constraints:
+  validation:
     format: email
 - uuid: d90e9eed-23d4-4533-9324-6c72ba23996a
   name: phone
@@ -83,7 +83,7 @@ attributes:
   description: Member status
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - ACTIVE
     - INACTIVE

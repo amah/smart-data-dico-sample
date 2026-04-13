@@ -15,7 +15,7 @@ attributes:
   description: Relationship to primary member
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - SPOUSE
     - CHILD
@@ -49,7 +49,7 @@ attributes:
   description: Gender
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - MALE
     - FEMALE

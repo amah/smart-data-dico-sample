@@ -15,7 +15,7 @@ attributes:
   description: Premium amount
   type: number
   required: true
-  constraints:
+  validation:
     minimum: 0
     precision: 10
     scale: 2
@@ -24,7 +24,7 @@ attributes:
   description: Payment frequency
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - MONTHLY
     - QUARTERLY
@@ -40,7 +40,7 @@ attributes:
   description: Coverage tier
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - INDIVIDUAL
     - INDIVIDUAL_PLUS_SPOUSE

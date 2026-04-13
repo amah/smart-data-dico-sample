@@ -20,7 +20,7 @@ attributes:
   description: Plan network type
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - HMO
     - PPO
@@ -32,7 +32,7 @@ attributes:
   description: ACA metal level
   type: enum
   required: true
-  constraints:
+  validation:
     enumValues:
     - BRONZE
     - SILVER
