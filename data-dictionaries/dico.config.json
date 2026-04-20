@@ -1,1 +1,30 @@
-{"version": 1}
+{
+  "version": 1,
+  "types": [
+    {
+      "name": "healthcare-subscriber-id",
+      "basedOn": "string",
+      "description": "US healthcare subscriber ID: 2 uppercase letters + 9 digits",
+      "validation": {
+        "pattern": "^[A-Z]{2}\\d{9}$",
+        "minLength": 11,
+        "maxLength": 11
+      }
+    },
+    {
+      "name": "money",
+      "basedOn": "number",
+      "description": "Monetary amount with 2 decimal places",
+      "validation": { "precision": 12, "scale": 2 }
+    },
+    {
+      "name": "email",
+      "basedOn": "string",
+      "description": "RFC-5322 email address",
+      "validation": {
+        "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+        "maxLength": 254
+      }
+    }
+  ]
+}
