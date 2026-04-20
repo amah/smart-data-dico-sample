@@ -1,0 +1,57 @@
+entities:
+  - uuid: c8b77078-c2b9-410b-ae01-c9934512ffe8
+    name: PaymentRecord
+    description: A payment received from a member
+    stereotype: event
+    status: approved
+    attributes:
+      - uuid: 718c31cc-fedb-4520-958c-b5178972e508
+        name: paymentId
+        description: Unique payment record identifier
+        type: string
+        required: true
+        primaryKey: true
+      - uuid: 8a6ddf3b-194a-4296-8cbb-8a79f11a039a
+        name: paymentDate
+        description: Date payment was received
+        type: date
+        required: true
+      - uuid: 059e99ba-890a-4dbb-a642-30e7fcfeba30
+        name: amount
+        description: Payment amount
+        type: number
+        required: true
+        validation:
+          minimum: 0
+          precision: 10
+          scale: 2
+      - uuid: 444657fa-ce27-4d99-b99d-47698d1ebcea
+        name: method
+        description: Payment method
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - CREDIT_CARD
+            - DEBIT_CARD
+            - ACH
+            - CHECK
+            - WIRE
+      - uuid: 5ed1012a-60aa-4394-b056-4ecdb268210f
+        name: referenceNumber
+        description: Payment reference/confirmation number
+        type: string
+        required: true
+      - uuid: c87fc925-7360-4203-880d-947829693149
+        name: status
+        description: Payment status
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - PENDING
+            - COMPLETED
+            - FAILED
+            - REFUNDED
+    createdAt: 2026-03-31T11:24:44.706579Z
+    updatedAt: 2026-03-31T11:24:44.706579Z

@@ -1,0 +1,53 @@
+entities:
+  - uuid: dbccb376-9997-4239-93f2-f7e9426b06f0
+    name: ProviderContract
+    description: Contract between provider and insurance company
+    stereotype: value-object
+    status: approved
+    attributes:
+      - uuid: bf6347ed-37f5-4766-9a23-29f87fbc48cf
+        name: contractId
+        description: Unique contract identifier
+        type: string
+        required: true
+        primaryKey: true
+      - uuid: 3ef59347-ec11-4247-9a92-554bc722b152
+        name: effectiveDate
+        description: Contract effective date
+        type: date
+        required: true
+      - uuid: 3dcedcbc-67b4-41a9-8582-5c43bab70d36
+        name: terminationDate
+        description: Contract termination date
+        type: date
+        required: false
+      - uuid: 93c9dce0-fc2d-4a89-b9ee-998198366735
+        name: feeScheduleType
+        description: Fee schedule type
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - MEDICARE
+            - CUSTOM
+            - PERCENTAGE_OF_BILLED
+      - uuid: 16fe606b-62d3-4d3a-91ee-ef039be3f16f
+        name: reimbursementRate
+        description: Reimbursement rate/percentage
+        type: number
+        required: true
+        validation:
+          minimum: 0
+      - uuid: e5354795-f8fa-4868-bc48-89cbf9d6b155
+        name: status
+        description: Contract status
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - ACTIVE
+            - PENDING
+            - TERMINATED
+            - EXPIRED
+    createdAt: 2026-03-31T11:24:44.706579Z
+    updatedAt: 2026-03-31T11:24:44.706579Z

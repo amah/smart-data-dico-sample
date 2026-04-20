@@ -1,0 +1,48 @@
+entities:
+  - uuid: 78a8f629-57bc-4223-afe3-29130428ff22
+    name: Adjudication
+    description: The adjudication decision on a claim
+    stereotype: event
+    status: approved
+    attributes:
+      - uuid: 3d42dc47-9815-4b81-850a-076b56bc8123
+        name: adjudicationId
+        description: Unique adjudication identifier
+        type: string
+        required: true
+        primaryKey: true
+      - uuid: 3151f3d8-4cfe-4e49-8f1c-a9457790abd1
+        name: adjudicationDate
+        description: Date of adjudication
+        type: datetime
+        required: true
+      - uuid: 92021128-5ea3-48e6-b4b0-2af7c2e20653
+        name: decision
+        description: Adjudication decision
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - APPROVED
+            - DENIED
+            - PARTIAL
+            - PENDING_INFO
+      - uuid: 5629f499-3c32-4bbc-8e9b-c810bd7e82e0
+        name: reason
+        description: Decision reason or denial code
+        type: string
+        required: true
+      - uuid: e6a14419-62c6-4755-befe-79f825ffc4bb
+        name: adjustedAmount
+        description: Adjusted payment amount
+        type: number
+        required: true
+        validation:
+          minimum: 0
+      - uuid: 8b4e1e7c-b1ed-4f3c-9b59-b1a28c7a8971
+        name: reviewerNotes
+        description: Reviewer notes
+        type: string
+        required: false
+    createdAt: 2026-03-31T11:24:44.706579Z
+    updatedAt: 2026-03-31T11:24:44.706579Z

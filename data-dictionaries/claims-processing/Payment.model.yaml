@@ -1,0 +1,53 @@
+entities:
+  - uuid: 7ac4eb70-5bcc-4e1f-bc20-e93753bcc8de
+    name: Payment
+    description: A payment made for a claim
+    stereotype: event
+    status: approved
+    attributes:
+      - uuid: af1b5d85-868c-44e6-a401-157abfe99c50
+        name: paymentId
+        description: Unique payment identifier
+        type: string
+        required: true
+        primaryKey: true
+      - uuid: 179c8f48-1e69-482b-bb06-08405948e4d6
+        name: paymentDate
+        description: Date payment was issued
+        type: date
+        required: true
+      - uuid: b6b530b2-a3eb-45d9-b2a2-60fcee707fd5
+        name: paymentMethod
+        description: Payment method
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - CHECK
+            - EFT
+            - VIRTUAL_CARD
+      - uuid: 92c07fca-7a71-4008-8837-7f90c497ae92
+        name: amount
+        description: Payment amount
+        type: number
+        required: true
+        validation:
+          minimum: 0
+          precision: 10
+          scale: 2
+      - uuid: 9c2bbdc9-b742-4576-914b-d5305a10951d
+        name: checkNumber
+        description: Check or reference number
+        type: string
+        required: false
+      - uuid: 759907e1-d838-4e5b-a07f-586318e26572
+        name: payeeType
+        description: Who receives payment
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - PROVIDER
+            - MEMBER
+    createdAt: 2026-03-31T11:24:44.706579Z
+    updatedAt: 2026-03-31T11:24:44.706579Z

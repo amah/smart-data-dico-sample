@@ -1,0 +1,31 @@
+relationships:
+  - uuid: rel-plan-coverage
+    description: Plan has Coverages
+    source:
+      entity: 3d8f89a9-3c56-422b-b576-03fc0f0c23c2
+      cardinality: one
+      name: coverages
+    target:
+      entity: c2d27d51-05e3-40e1-82cb-a1b3d9721b21
+      cardinality: many
+      name: plan
+  - uuid: rel-plan-premium
+    description: Plan has Premiums
+    source:
+      entity: 3d8f89a9-3c56-422b-b576-03fc0f0c23c2
+      cardinality: one
+      name: premiums
+    target:
+      entity: 03ee733a-f092-4729-bf35-596c17eabe14
+      cardinality: many
+      name: plan
+  - uuid: rel-plan-benefit
+    description: Plan includes Benefits
+    source:
+      entity: 3d8f89a9-3c56-422b-b576-03fc0f0c23c2
+      cardinality: many
+      name: benefits
+    target:
+      entity: 8bc9cd91-1e9c-4b07-a110-6e9bb728b4b3
+      cardinality: many
+      name: plans

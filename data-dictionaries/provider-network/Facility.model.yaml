@@ -1,0 +1,64 @@
+entities:
+  - uuid: 7d31596f-58e6-40f9-bd0d-221e6a5ae189
+    name: Facility
+    description: A healthcare facility
+    stereotype: reference-data
+    status: approved
+    attributes:
+      - uuid: 574f0ab6-2777-4095-9d09-740297b44882
+        name: facilityId
+        description: Unique facility identifier
+        type: string
+        required: true
+        primaryKey: true
+      - uuid: ccffe1cc-598d-45c4-af85-4fdca5cf680b
+        name: name
+        description: Facility name
+        type: string
+        required: true
+      - uuid: 7e5cfa92-d19d-45ac-982e-6712723d4bbf
+        name: type
+        description: Facility type
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - HOSPITAL
+            - CLINIC
+            - URGENT_CARE
+            - LAB
+            - PHARMACY
+            - IMAGING_CENTER
+            - SURGERY_CENTER
+      - uuid: f7e7547e-0e53-4837-9c0f-1633ab394912
+        name: street
+        description: Street address
+        type: string
+        required: true
+      - uuid: 8ad64e06-4767-4185-9ae4-96150b597a60
+        name: city
+        description: City
+        type: string
+        required: true
+      - uuid: 9184d641-02ca-44a4-8d6e-d89b0608f29b
+        name: state
+        description: State
+        type: string
+        required: true
+      - uuid: a748823e-1341-49fa-afbf-868108ab091a
+        name: zipCode
+        description: ZIP code
+        type: string
+        required: true
+      - uuid: 57d1bd30-39ff-4f37-ad6f-55107cbf15de
+        name: phone
+        description: Contact phone
+        type: string
+        required: true
+      - uuid: b0672781-6f37-4b96-97d1-7e80b30bb789
+        name: npi
+        description: Facility NPI
+        type: string
+        required: false
+    createdAt: 2026-03-31T11:24:44.706579Z
+    updatedAt: 2026-03-31T11:24:44.706579Z

@@ -1,0 +1,37 @@
+relationships:
+  - uuid: rel-invoice-member
+    description: Invoice billed to Member
+    source:
+      entity: 0662b921-f306-4268-8f90-ca03f500a971
+      cardinality: many
+      name: member
+    target:
+      entity: 36ab6300-e581-41df-9668-6b1d2022dacb
+      cardinality: one
+      name: invoices
+  - uuid: rel-invoice-payment
+    description: Invoice has PaymentRecords
+    source:
+      entity: 0662b921-f306-4268-8f90-ca03f500a971
+      cardinality: one
+      name: paymentRecords
+    target:
+      entity: c8b77078-c2b9-410b-ae01-c9934512ffe8
+      cardinality: many
+      name: invoice
+  - uuid: lineage-claim-invoice
+    type: lineage
+    description: Approved claims generate member invoices
+    source:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: many
+      name: approvedClaims
+    target:
+      entity: 0662b921-f306-4268-8f90-ca03f500a971
+      cardinality: one
+      name: generatedInvoice
+    metadata:
+      - name: transformation-type
+        value: billing
+      - name: frequency
+        value: monthly-batch

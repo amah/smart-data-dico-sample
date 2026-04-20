@@ -1,0 +1,63 @@
+entities:
+  - uuid: 7875b2d0-1748-4763-b486-215334bf513e
+    name: Address
+    description: Physical or mailing address for a member
+    stereotype: value-object
+    status: approved
+    attributes:
+      - uuid: 6c43acb9-811e-4eec-b3a4-b9bee0f3a916
+        name: addressId
+        description: Unique address identifier
+        type: string
+        required: true
+        primaryKey: true
+      - uuid: fed16b28-c8b2-4d2a-aa9f-356f3a919778
+        name: type
+        description: Address type
+        type: enum
+        required: true
+        validation:
+          enumValues:
+            - HOME
+            - MAILING
+            - WORK
+      - uuid: 8eb273ce-8132-48d5-abe4-04d6649b8469
+        name: street
+        description: Street address line 1
+        type: string
+        required: true
+        metadata:
+          - name: pii-category
+            value: direct
+      - uuid: ce1fd4a0-99fd-4aaf-b4e1-7f2b50afc6d3
+        name: street2
+        description: Street address line 2
+        type: string
+        required: false
+      - uuid: 4f5cc122-19fc-481e-b1ec-e483252e2e81
+        name: city
+        description: City
+        type: string
+        required: true
+      - uuid: c8346be0-dbd3-4df7-a2f0-19c5e370c662
+        name: state
+        description: State code
+        type: string
+        required: true
+        validation:
+          minLength: 2
+          maxLength: 2
+      - uuid: bfa2e140-66b4-494b-a3c7-ebc92bccbee9
+        name: zipCode
+        description: ZIP code
+        type: string
+        required: true
+        validation:
+          pattern: ^\d{5}(-\d{4})?$
+      - uuid: 93a937cd-f303-468c-987f-85bf6c43d9b8
+        name: country
+        description: Country code
+        type: string
+        required: true
+    createdAt: 2026-03-31T11:24:44.706579Z
+    updatedAt: 2026-03-31T11:24:44.706579Z

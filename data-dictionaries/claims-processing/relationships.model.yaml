@@ -1,0 +1,91 @@
+relationships:
+  - uuid: rel-claim-claimline
+    description: Claim has ClaimLines
+    source:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: one
+      name: claimLines
+    target:
+      entity: 9e2691a5-c572-471b-86c0-79f8b46b144c
+      cardinality: many
+      name: claim
+  - uuid: rel-claim-adjudication
+    description: Claim has Adjudications
+    source:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: one
+      name: adjudications
+    target:
+      entity: 78a8f629-57bc-4223-afe3-29130428ff22
+      cardinality: many
+      name: claim
+  - uuid: rel-claim-payment
+    description: Claim has Payments
+    source:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: one
+      name: payments
+    target:
+      entity: 7ac4eb70-5bcc-4e1f-bc20-e93753bcc8de
+      cardinality: many
+      name: claim
+  - uuid: rel-claim-eob
+    description: Claim generates EOB
+    source:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: one
+      name: eob
+    target:
+      entity: 00f43399-994d-4216-a59c-41f0c7d45899
+      cardinality: one
+      name: claim
+  - uuid: rel-claim-member
+    description: Claim belongs to Member
+    source:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: many
+      name: member
+    target:
+      entity: 36ab6300-e581-41df-9668-6b1d2022dacb
+      cardinality: one
+      name: claims
+  - uuid: rel-claim-provider
+    description: Claim submitted by Provider
+    source:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: many
+      name: provider
+    target:
+      entity: 78cf8b8a-6ec3-48a5-b08f-33bf115b166e
+      cardinality: one
+      name: claims
+  - uuid: lineage-member-claim
+    type: lineage
+    description: Member data enriches claim for adjudication
+    source:
+      entity: 36ab6300-e581-41df-9668-6b1d2022dacb
+      cardinality: one
+      name: memberData
+    target:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: many
+      name: enrichedClaims
+    metadata:
+      - name: transformation-type
+        value: enrichment
+  - uuid: lineage-claim-eob
+    type: lineage
+    description: Adjudicated claim generates EOB
+    source:
+      entity: b8947679-12ce-4e86-8c72-4d74b91ffc6c
+      cardinality: one
+      name: adjudicatedClaim
+    target:
+      entity: 00f43399-994d-4216-a59c-41f0c7d45899
+      cardinality: one
+      name: generatedEob
+    metadata:
+      - name: transformation-type
+        value: generation
+      - name: frequency
+        value: per-claim
